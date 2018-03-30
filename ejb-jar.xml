@@ -1,0 +1,38 @@
+<!-- ... -->
+<session>
+    <ejb-name>ShoppingCartBean</ejb-name>
+    <!-- ...-->
+</session>
+
+<session>
+<ejb-name>ProductBeanUser</ejb-name>
+<!--...-->
+<ejb-ref>
+    <description>This is a reference to the store products entity </description>
+    <ejb-ref-name>ejb/ProductHome</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <home>org.jboss.store.ejb.ProductHome</home>
+    <remote> org.jboss.store.ejb.Product</remote>
+</ejb-ref>
+
+</session>
+
+<session>
+<ejb-ref>
+    <ejb-name>ShoppingCartUser</ejb-name>
+    <!--...-->
+    <ejb-ref-name>ejb/ShoppingCartHome</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>org.jboss.store.ejb.ShoppingCartHome</home>
+    <remote> org.jboss.store.ejb.ShoppingCart</remote>
+    <ejb-link>ShoppingCartBean</ejb-link>
+</ejb-ref>
+</session>
+
+<entity>
+<description>The Product entity bean </description>
+<ejb-name>ProductBean</ejb-name>
+<!--...-->
+</entity>
+
+        <!--...-->
