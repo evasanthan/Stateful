@@ -16,6 +16,6 @@ outputs:
 - name: package-output
 
 run:
-  path: tasks\package.sh
-#  args:
-#  - run source.zip 
+  path: Stateful\ci\tasks\package.sh
+  args:
+  - run source.zip 

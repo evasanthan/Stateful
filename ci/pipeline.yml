@@ -14,4 +14,4 @@ jobs:
   - get: VSM-Stateful-POC
   - task: package
     privileged: true
-    file: package.yml
+    file: Stateful/ci/tasks/package.yml
