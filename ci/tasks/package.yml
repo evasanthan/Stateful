@@ -1,0 +1,21 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    username: evasanthan
+    password: vaskala@09
+    repository: evasanthan/vsm
+    tag: latest
+
+inputs:
+- name: VSM-Stateful-POC
+
+outputs:
+- name: package-output
+
+run:
+  path: tasks\package.sh
+#  args:
+#  - run source.zip 

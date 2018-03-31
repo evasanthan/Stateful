@@ -1,0 +1,17 @@
+---
+resources:
+- name: VSM-Stateful-POC
+  type: git
+  source:
+    uri: https://github.com/evasanthan/Stateful.git
+    branch: master
+    username: evasanthan@gmail.com
+    password: vaskala09
+jobs:
+- name: package
+  public: true
+  plan:
+  - get: VSM-Stateful-POC
+  - task: package
+    privileged: true
+    file: package.yml
