@@ -1,14 +1,9 @@
 ---
 platform: linux
 
-resources:
-- name: vsm-image
+image_resource:
   type: docker-image
-  source:
-    repository: evasanthan/vsm
-    username: evasanthan
-    password: vaskala@09
-    tag: latest
+  source: {repository: evasanthan/vsm}
 
 inputs:
 - name: Stateful
