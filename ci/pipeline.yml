@@ -23,5 +23,5 @@ jobs:
   - get: Stateful
   - task: VSM
     privileged: true
-    file: Stateful/ci/tasks/package.yml
+#    file: Stateful/ci/tasks/package.yml
     image: vsm-image
