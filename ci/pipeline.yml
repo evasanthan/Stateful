@@ -1,6 +1,6 @@
 ---
 resources:
-- name: VSM-Stateful-POC
+- name: Stateful
   type: git
   source:
     uri: https://github.com/evasanthan/Stateful.git
@@ -11,7 +11,7 @@ jobs:
 - name: package
   public: true
   plan:
-  - get: VSM-Stateful-POC
+  - get: Stateful
   - task: package
     privileged: true
     file: Stateful/ci/tasks/package.yml

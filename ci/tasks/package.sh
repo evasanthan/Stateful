@@ -2,7 +2,7 @@
 
 set -e +x
 
-pushd VSM-Stateful-POC-source
+pushd Stateful-source
   echo "Packaging Zip"
   	zip -r source.zip .
 popd

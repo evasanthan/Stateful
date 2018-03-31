@@ -10,7 +10,7 @@ image_resource:
     tag: latest
 
 inputs:
-- name: VSM-Stateful-POC
+- name: Stateful
 
 outputs:
 - name: package-output
