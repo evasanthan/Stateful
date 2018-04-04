@@ -13,6 +13,7 @@ jobs:
   public: true
   plan:
   - get: Stateful
+    trigger: true
   - task: create-source-zip
     config:
       platform: linux
@@ -27,6 +28,8 @@ jobs:
         path: Stateful/ci/tasks/package.sh
 
   - task: run-vsm-analyser
+    params:
+      OWNER: evasanthan
     config:
       platform: linux
       image_resource:
@@ -41,8 +44,6 @@ jobs:
       outputs:
       - name: report-output
       run:
-        path: source-input/source.zip
+        path: .
         args:
-        - -c
-        - |
-          docker run vsm source-input/source.zip
+        - run vsm source-input/source.zip
