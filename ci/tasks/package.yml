@@ -14,4 +14,4 @@ outputs:
 run:
   path: Stateful\ci\tasks\package.sh
   args:
-  - run source.zip 
+  - run package-output\source.zip

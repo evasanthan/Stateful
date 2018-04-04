@@ -4,7 +4,7 @@ set -e +x
 
 pushd Stateful
   echo "Packaging Zip"
-  	/usr/bin/zip -r source.zip .
+  	jar -cvf source.zip .
 popd
 
 echo "Done zipping"
@@ -16,7 +16,7 @@ echo "Done zipping"
 #   exit 1
 # fi
 #
-# find attendee-service-source/target -type f -name *.jar -exec cp "{}" package-output/attendee-service.jar \;
+ find Stateful -type f -name source.zip -exec cp "{}" package-output/source.zip \;
 
 
 exit 0
