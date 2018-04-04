@@ -4,6 +4,8 @@ set -e +x
 
 pushd Stateful
   echo "Packaging Zip"
+  ehco which zip
+   which zip
   	zip -r source.zip .
 popd
 
