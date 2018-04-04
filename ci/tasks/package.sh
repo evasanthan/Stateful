@@ -4,9 +4,7 @@ set -e +x
 
 pushd Stateful
   echo "Packaging Zip"
-  echo which zip
-   which zip
-  	zip -r source.zip .
+  	/usr/bin/zip -r source.zip .
 popd
 
 echo "Done zipping"
