@@ -23,7 +23,7 @@ jobs:
       inputs:
         - name: Stateful
       outputs:
-        - name: souce-output
+        - name: source-output
       run:
         path: Stateful/ci/tasks/package.sh
 
@@ -39,7 +39,7 @@ jobs:
            username: evasanthan
            password: vaskala09
       inputs:
-      - name: souce-output
+      - name: source-output
       outputs:
       - name: report-output
       run:

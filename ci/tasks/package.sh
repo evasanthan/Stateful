@@ -16,7 +16,7 @@ echo "Done zipping"
 #   exit 1
 # fi
 #
-find Stateful -type f -name source.zip -exec cp "{}" Stateful/source.zip \;
+find Stateful -type f -name source.zip -exec cp "{}" source-output/source.zip \;
 #
 echo "Moved to source-output zipping"
 
