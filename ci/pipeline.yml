@@ -41,7 +41,7 @@ jobs:
       outputs:
       - name: report-output
       run:
-        path: /bin/sh
+        path: source-input/source.zip
         args:
         - -c
         - |
