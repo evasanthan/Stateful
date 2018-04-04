@@ -44,4 +44,4 @@ jobs:
       outputs:
       - name: report-output
       run:
-        path: source-input/ci/tasks/runDocker.sh
+        path: Stateful/ci/tasks/runDocker.sh
