@@ -9,13 +9,22 @@ resources:
     password: vaskala09
 
 jobs:
-- name: VSM
+- name: VSM-Analyser
   public: true
-  serial: true
   plan:
-   - get: Stateful
-   - task: run
+  - get: Stateful
+  - task: create-source-zip
      config:
+
+      inputs:
+       - name: Stateful
+       outputs:
+       - name: source-input
+       run:
+         path: Stateful/ci/tasks/package.sh
+
+    - task: run-vsm-analyser
+      config:
        platform: linux
 
        image_resource:
@@ -25,13 +34,13 @@ jobs:
            username: evasanthan
            password: vaskala09
 
-       inputs:
-       - name: Stateful
-
-       outputs:
-       - name: package-output
-
-       run:
-        path: Stateful/ci/tasks/package.sh
-        args:
-        - run package-output/source.zip
+        inputs:
+        - name: source-input
+        outputs:
+        - name: report-output
+        run:
+          path: /entrypoint.sh
+          args:
+              run vsm source-input/source.zip
+        params:
+          NAME: evasanthan
