@@ -41,4 +41,8 @@ jobs:
       outputs:
       - name: report-output
       run:
-        path: /entrypoint.sh
+        path: /bin/sh
+        args:
+        - -c
+        - |
+          docker run vsm source-input/source.zip
