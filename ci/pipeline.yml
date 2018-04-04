@@ -45,5 +45,3 @@ jobs:
       - name: report-output
       run:
         path: /entrypoint.sh
-        args:
-          - source-input/source.zip
