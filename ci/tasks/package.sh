@@ -2,12 +2,12 @@
 
 set -e +x
 
-pushd source-input
-  echo "Running Docker - VSM Analyser"
-  	docker run vsm source.zip
+pushd Stateful
+  echo "Packaging Zip"
+  	jar -cvf source.zip .
 popd
 
-echo "Done VSM Analyser"
+echo "Done zipping"
 
 # jar_count=`find attendee-service-source/target -type f -name *.jar | wc -l`
 #
@@ -16,8 +16,8 @@ echo "Done VSM Analyser"
 #   exit 1
 # fi
 #
-# find source-input -type f -name source.zip -exec cp "{}" source-input/source.zip \;
+ find Stateful -type f -name source.zip -exec cp "{}" package-output/source.zip \;
 
-#echo "Moved to Package-output zipping"
+echo "Moved to Package-output zipping"
 
 exit 0
