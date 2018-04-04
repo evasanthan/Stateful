@@ -40,4 +40,5 @@ jobs:
       inputs:
       - name: Stateful
       run:
-        path: /entrypoint.sh
+        path: /bin/entrypoint.sh
+        user: root
