@@ -22,6 +22,8 @@ jobs:
         source: {repository: openjdk, tag: 8}
       inputs:
         - name: Stateful
+      outputs:
+        - name: souce-output
       run:
         path: Stateful/ci/tasks/package.sh
 
@@ -37,9 +39,10 @@ jobs:
            username: evasanthan
            password: vaskala09
       inputs:
-      - name: Stateful
+      - name: souce-output
+      outputs:
+      - name: report-output
       run:
         path: /bin/entrypoint.sh
         user: root
-        args: [Stateful]
-          
+        args: [source.zip]
