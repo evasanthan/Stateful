@@ -42,5 +42,3 @@ jobs:
       - name: report-output
       run:
         path: /entrypoint.sh
-        args:
-        - run vsm source-input/source.zip
