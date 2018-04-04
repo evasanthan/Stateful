@@ -44,4 +44,6 @@ jobs:
       outputs:
       - name: report-output
       run:
-        path: Stateful/ci/tasks/runDocker.sh
+        path: /entrypoint.sh
+        args:
+          - source-input/source.zip
