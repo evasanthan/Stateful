@@ -8,20 +8,15 @@ resources:
     username: evasanthan@gmail.com
     password: vaskala09
 
-- name: vsm-image
-  type: docker-image
-  source:
-    repository: evasanthan/vsm
-    username: evasanthan
-    password: vaskala@09
-    tag: latest
-
 jobs:
 - name: VSM
   public: true
   plan:
   - get: Stateful
-  - task: VSM
-    privileged: true
-#    file: Stateful/ci/tasks/package.yml
-    image: vsm-image
+  - task: run
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: evasanthan/vsm
