@@ -14,7 +14,6 @@ jobs:
   serial: true
   plan:
   - get: Stateful
-    trigger: true
   - task: create-source-zip
     config:
       platform: linux
@@ -42,3 +41,5 @@ jobs:
       run:
         path: /bin/entrypoint.sh
         user: root
+        args: [Stateful]
+          
