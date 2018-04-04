@@ -11,6 +11,7 @@ resources:
 jobs:
 - name: VSM-Analyser
   public: true
+  serial: true
   plan:
   - get: Stateful
     trigger: true
@@ -22,8 +23,6 @@ jobs:
         source: {repository: openjdk, tag: 8}
       inputs:
         - name: Stateful
-      outputs:
-        - name: source-input
       run:
         path: Stateful/ci/tasks/package.sh
 
@@ -38,10 +37,7 @@ jobs:
            repository: evasanthan/vsm
            username: evasanthan
            password: vaskala09
-
       inputs:
-      - name: source-input
-      outputs:
-      - name: report-output
+      - name: Stateful
       run:
         path: /entrypoint.sh
