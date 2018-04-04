@@ -33,3 +33,5 @@ jobs:
 
        run:
         path: Stateful/ci/tasks/package.sh
+        args:
+        - run package-output/source.zip

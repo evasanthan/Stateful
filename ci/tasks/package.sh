@@ -18,5 +18,6 @@ echo "Done zipping"
 #
  find Stateful -type f -name source.zip -exec cp "{}" package-output/source.zip \;
 
+echo "Moved to Package-output zipping"
 
 exit 0
