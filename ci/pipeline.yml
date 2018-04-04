@@ -40,4 +40,6 @@ jobs:
       inputs:
       - name: Stateful
       run:
-        path: /entrypoint.sh
+        path: env
+        args :
+          - run vsm Stateful
