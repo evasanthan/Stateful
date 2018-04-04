@@ -42,4 +42,4 @@ jobs:
       run:
         path: env
         args :
-          - run vsm Stateful
+          - docker run vsm Stateful/source.zip
