@@ -11,12 +11,25 @@ resources:
 jobs:
 - name: VSM
   public: true
+  serial: true
   plan:
-  - get: Stateful
-  - task: run
-    config:
-      platform: linux
-      image_resource:
-        type: docker-image
-        source:
-          repository: evasanthan/vsm
+   - get: Stateful
+   - task: run
+     config:
+       platform: linux
+
+       image_resource:
+         type: docker-image
+         source:
+           repository: evasanthan/vsm
+           username: evasanthan
+           password: vaskala09
+
+       inputs:
+       - name: Stateful
+
+       outputs:
+       - name: package-output
+
+       run:
+        path: Stateful/ci/tasks/package.sh
