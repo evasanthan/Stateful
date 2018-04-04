@@ -44,6 +44,4 @@ jobs:
       outputs:
       - name: report-output
       run:
-        path: .
-        args:
-        - run vsm source-input/source.zip
+        path: Stateful/ci/tasks/runDocker.sh       
