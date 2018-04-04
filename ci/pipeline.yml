@@ -14,33 +14,33 @@ jobs:
   plan:
   - get: Stateful
   - task: create-source-zip
-     config:
-
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: openjdk, tag: 8}
       inputs:
-       - name: Stateful
-       outputs:
-       - name: source-input
-       run:
-         path: Stateful/ci/tasks/package.sh
+        - name: Stateful
+      outputs:
+        - name: source-input
+      run:
+        path: Stateful/ci/tasks/package.sh
 
-    - task: run-vsm-analyser
-      config:
-       platform: linux
-
-       image_resource:
+  - task: run-vsm-analyser
+    config:
+      platform: linux
+      image_resource:
          type: docker-image
          source:
            repository: evasanthan/vsm
            username: evasanthan
            password: vaskala09
 
-        inputs:
-        - name: source-input
-        outputs:
-        - name: report-output
-        run:
-          path: /entrypoint.sh
-          args:
-              run vsm source-input/source.zip
-        params:
-          NAME: evasanthan
+      inputs:
+      - name: source-input
+      outputs:
+      - name: report-output
+      run:
+        path: /entrypoint.sh
+        args:
+        - run vsm source-input/source.zip
