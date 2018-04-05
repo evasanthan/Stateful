@@ -35,9 +35,9 @@ jobs:
       image_resource:
          type: docker-image
          source:
-           repository: evasanthan/vsm
-           username: evasanthan
-           password: vaskala09
+           repository: digicloud/vsm
+           username: digicloud
+           password: cloudlift@123
       inputs:
       - name: source-output
       outputs:
