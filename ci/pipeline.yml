@@ -43,6 +43,6 @@ jobs:
       outputs:
       - name: report-output
       run:
-        path: /bin/entrypoint.sh
+        path: /bin/
         user: root
-        args: [source-output/]
+        args: [run evasanthan/vsm source-output/]
