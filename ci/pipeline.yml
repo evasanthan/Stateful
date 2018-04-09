@@ -3,11 +3,10 @@ resources:
 - name: Stateful
   type: git
   source:
-    uri: https://github.com/evasanthan/Stateful.git
+    uri: {{git-url}}
     branch: master
-    username: evasanthan@gmail.com
-    password: vaskala09
-
+    username: {{git-username}}
+    password: {{git-password}}
 jobs:
 - name: VSM-Analyser
   public: true
@@ -28,16 +27,14 @@ jobs:
         path: Stateful/ci/tasks/package.sh
 
   - task: run-vsm-analyser
-    params:
-      OWNER: evasanthan
     config:
       platform: linux
       image_resource:
          type: docker-image
          source:
            repository: digicloud/vsm
-           username: digicloud
-           password: cloudlift@123
+           username: {{dockerhub-username}}
+           password: {{dockerhub-password}}
       inputs:
       - name: source-output
       outputs:

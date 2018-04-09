@@ -1,0 +1,8 @@
+
+git-url: ((github-source-url))
+# git-branch: master
+git-username: ((github-user))
+git-password: ((github-password))
+
+dockerhub-username: ((dockerhub-user))
+dockerhub-password: ((dockerhub-password))
