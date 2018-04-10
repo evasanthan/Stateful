@@ -2,7 +2,7 @@
 
 set -e +x
 
-pushd Stateful
+pushd source-git-input
   echo "Packaging Zip"
   	jar -cvf source.zip .
 popd
@@ -16,7 +16,7 @@ echo "Done zipping"
 #   exit 1
 # fi
 #
-find Stateful -type f -name source.zip -exec cp "{}" source-output/source.zip \;
+find source-git-input -type f -name source.zip -exec cp "{}" source-output/source.zip \;
 #
 echo "Moved to source-output Archiving"
 

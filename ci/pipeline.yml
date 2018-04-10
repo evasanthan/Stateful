@@ -1,6 +1,6 @@
 ---
 resources:
-- name: Stateful
+- name: source-git-input
   type: git
   source:
     uri: {{git-url}}
@@ -12,7 +12,7 @@ jobs:
   public: true
   serial: true
   plan:
-  - get: Stateful
+  - get: source-git-input
   - task: create-source-zip
     config:
       platform: linux
@@ -20,11 +20,11 @@ jobs:
         type: docker-image
         source: {repository: digicloud/java8zip, tag: latest}
       inputs:
-        - name: Stateful
+        - name: source-git-input
       outputs:
         - name: source-output
       run:
-        path: Stateful/ci/tasks/package.sh
+        path: source-git-input/ci/tasks/package.sh
 
   - task: run-vsm-analyser
     config:
